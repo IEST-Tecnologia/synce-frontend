@@ -5,6 +5,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
 import LogoAliexpress from '../../public/images/logo-aliexpress.png'
 import LogoKawai from '../../public/images/logo-kawai.png'
 import LogoMl from '../../public/images/logo-ml.png'
@@ -20,10 +21,8 @@ const Carroussel = () => {
         <Swiper
           slidesPerView={4}
           spaceBetween={50}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
+          navigation={true}
+          modules={[Navigation]}
           pagination={{
             clickable: true,
             enabled: true,
