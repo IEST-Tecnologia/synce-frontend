@@ -1,0 +1,24 @@
+.imageContainer {
+  padding: 2rem;
+
+  height: 100%;
+  background-image: url('/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* .imageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  translate: -30%;
+  z-index: -10;
+  height: 100%;
+  /* background-image: url('/banner_home_vermelho 2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+} */

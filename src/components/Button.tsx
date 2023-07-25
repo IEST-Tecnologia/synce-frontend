@@ -1,3 +1,4 @@
+import { Transition } from '@headlessui/react'
 import React from 'react'
 
 interface Props {
@@ -7,14 +8,12 @@ interface Props {
 
 const Button = ({ children, onClick }: Props) => {
   return (
-    <div>
-      <button
-        onClick={onClick}
-        className='bg-synce-secondary rounded-lg py-3 px-6 text-white hover:bg-synce-secondary-dark'
-      >
-        {children}
-      </button>
-    </div>
+    <button
+      onClick={onClick}
+      className='bg-synce-secondary rounded-lg py-3 px-6 text-white hover:bg-synce-secondary-dark font-bold transition ease-in-out   hover:scale-105 duration-200'
+    >
+      {children}
+    </button>
   )
 }
 

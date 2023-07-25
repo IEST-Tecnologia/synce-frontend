@@ -1,7 +1,7 @@
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 import React from 'react'
-import '../globals.css'
+import '../../globals.css'
 
 export default function Home() {
   // const [text, setText] = React.useState('')
