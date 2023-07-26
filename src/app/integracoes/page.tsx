@@ -7,6 +7,8 @@ import ImagemConteudoIntegracoes from '../../../public/images/banner_integraçoe
 import LogoSynce from '../../../public/images/logo_synce.png'
 import BannerLogistica from '../../../public/images/banner-logistica.png'
 import BlockImageContent from '@/pages/blockImageContent'
+import ListAnimated from '@/components/ListAnimated'
+import TitleAnimated from '@/components/TitleAnimated'
 
 export default function Integracoes() {
   return (
@@ -14,14 +16,14 @@ export default function Integracoes() {
       <main>
         <div className="relative w-full h-auto flex flex-col items-end bg-[url('/images/banner-integracoes.png')] bg-no-repeat bg-cover  bg-right lg:bg-top  py-16 px-4 lg:px-14">
           <div>
-            <h1 className='text-white text-[45px] font-medium leading-10 mb-6'>
+            {/* <h1 className='text-white text-[45px] font-medium leading-10 mb-6'>
               Integrações de <br /> soluções
-            </h1>
-            <ul className='ml-4 list-disc text-white mb-14'>
-              <li>Lorem ipsum dolor sit amet, consectetur.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur.</li>
-            </ul>
+            </h1> */}
+            <TitleAnimated
+              text='Integrações de soluções'
+              className='text-white w-[350px] text-[45px] font-medium leading-10 mb-6'
+            />
+            <ListAnimated />
             <Link
               className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
               href='/'

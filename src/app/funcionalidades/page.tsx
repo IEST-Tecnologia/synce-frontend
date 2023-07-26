@@ -2,8 +2,12 @@ import Image from 'next/image'
 import LogoSynce from '../../../public/images/logo_synce_simbolo.png'
 import BannerLogistica from '../../../public/images/banner-logistica.png'
 import BlockImageContent from '@/pages/blockImageContent'
+import ListAnimated from '@/components/ListAnimated'
+import { motion } from 'framer-motion'
 
 export default function Integracoes() {
+  const list = { hidden: { opacity: 0 } }
+  const item = { hidden: { x: -10, opacity: 0 } }
   return (
     <>
       <main>
@@ -15,6 +19,7 @@ export default function Integracoes() {
             <h1 className='text-[#666] font-normal text-5xl'>
               Funcionalidades <br /> Synce
             </h1>
+            <ListAnimated />
             <ul className='list-disc mt-6'>
               <li className='ml-6'>Lorem ipsum dolor sit amet, consectetur.</li>
               <li className='ml-6'>Lorem ipsum dolor sit amet, consectetur.</li>
