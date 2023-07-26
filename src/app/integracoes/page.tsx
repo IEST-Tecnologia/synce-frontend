@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import '../../../public/css/swiper.css'
 import Carroussel from '@/pages/carroussel'
 import BlockContent from '@/pages/blockContent'
 import ImagemConteudoIntegracoes from '../../../public/images/banner_integraçoes-v2.png'
@@ -11,7 +12,7 @@ export default function Integracoes() {
   return (
     <>
       <main>
-        <div className="relative w-full h-auto flex flex-col items-end bg-[url('/images/banner-integracoes.png')] bg-cover py-16 px-14">
+        <div className="relative w-full h-auto flex flex-col items-end bg-[url('/images/banner-integracoes.png')] bg-no-repeat bg-cover  bg-right lg:bg-top  py-16 px-4 lg:px-14">
           <div>
             <h1 className='text-white text-[45px] font-medium leading-10 mb-6'>
               Integrações de <br /> soluções
@@ -31,9 +32,9 @@ export default function Integracoes() {
         </div>
       </main>
       <Carroussel />
-      <section className='p-10 flex justify-center items-center space-x-8'>
-        <div className='w-4/6 space-y-4'>
-          <div className='w-full flex justify-between'>
+      <section className='p-10 flex justify-center items-center space-x-8 flex-col lg:flex-row'>
+        <div className='w-full lg:w-4/6 space-y-4'>
+          <div className='w-full flex flex-wrap justify-center lg:justify-between'>
             <BlockContent
               title='Lorem ipsum dolor sit amet'
               sub='Gerencie seu estoque'
@@ -45,7 +46,7 @@ export default function Integracoes() {
               text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing'
             />
           </div>
-          <div className='w-full flex justify-between'>
+          <div className='w-full flex flex-wrap justify-center lg:justify-between'>
             <BlockContent
               title='Lorem ipsum dolor sit amet'
               sub='Gerencie seu estoque'
@@ -58,7 +59,7 @@ export default function Integracoes() {
             />
           </div>
         </div>
-        <div className='w-2/6'>
+        <div className='w-full flex justify-center lg:w-2/6'>
           <Image src={ImagemConteudoIntegracoes} alt='Imagem de integrações' />
         </div>
       </section>
@@ -86,13 +87,13 @@ export default function Integracoes() {
       </section>
 
       <section className='bg-synce flex'>
-        <div className='w-5/6 flex justify-between items-center mr-6'>
-          <div className='w-9/12 pl-20'>
+        <div className='w-5/6 flex items-start px-5 mr-6 flex-col lg:justify-between lg:items-center lg:flex-row'>
+          <div className='pl-5 lg:w-9/12 lg:pl-20'>
             <p className='text-[30px] text-white font-bold'>
               Não perca essa oportunidade e comece hoje mesmo!
             </p>
           </div>
-          <div className='w-3/12 flex justify-end'>
+          <div className='pl-5 lg:w-3/12 flex justify-end'>
             <Link
               className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
               href='/'

@@ -53,9 +53,6 @@ const Carroussel = () => {
           <SwiperSlide>
             <Image src={LogoShoppe} alt='Logo Shoppe' />
           </SwiperSlide>
-          <div className='swiper-pagination'></div>
-          <div className='text-[#666] text-xs swiper-button-next'></div>
-          <div className='text-[#666] text-xs swiper-button-prev'></div>
         </Swiper>
       </div>
     </section>

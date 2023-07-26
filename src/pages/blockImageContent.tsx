@@ -10,7 +10,7 @@ interface Props {
 const BlockImageContent = ({ img, title, text }: Props) => {
   return (
     <div className='w-[47%] bg-white rounded-lg'>
-      <Image className='rounded-t-lg' src={img} alt={title} />
+      <Image className='rounded-t-lg w-full' src={img} alt={title} />
       <div className='p-4'>
         <h4 className='text-[#666] text-xl font-bold mb-3'>{title}</h4>
         <p className='text-[#666] text-base'>{text}</p>
