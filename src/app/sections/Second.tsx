@@ -13,7 +13,7 @@ export default function Second() {
   const isVisible = useOnScreen(ref)
 
   return (
-    <div className='relative bg-synce-primary lg:bg-transparent lg:bg-[url("/second_bg.png")] lg:bg-cover lg:bg-no-repeat lg:h-full'>
+    <div className='relative bg-synce-primary  lg:bg-transparent lg:bg-[url("/second_bg.png")] lg:bg-cover lg:bg-no-repeat lg:h-full'>
       <div className='absolute h-full hidden lg:flex ml-64'>
         <img
           src='/second_woman.png'

@@ -32,7 +32,7 @@ const liVariants = {
   },
 }
 
-export const Navigation = () => {
+export const Navigation = ({ toggleOpen }: any) => {
   const navLinks = [
     {
       href: '/',
@@ -57,10 +57,11 @@ export const Navigation = () => {
         <motion.li
           variants={liVariants}
           whileTap={{ scale: 0.95 }}
-          className={` text-white  hover:bg-synce-primary-light rounded-lg ${
-            pathname?.startsWith(link.href) ? 'bg-sync-primary-light' : ''
+          className={` text-white  hover:bg-synce-primary-dark rounded-lg ${
+            pathname === link.href ? 'bg-synce-primary-light' : ''
           }`}
           key={link.name}
+          onClick={() => toggleOpen()}
         >
           <Link
             className='w-full h-full block p-4 text-center text-2xl font-bold'

@@ -13,8 +13,9 @@ import ButtonAnimated from '@/components/ButtonAnimated'
 import ImageAnimated from '@/components/ImageAnimated'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import useOnScreen from '@/components/useOnScreen'
+import useOnScreen from '@/hooks/useOnScreen'
 import { useRef } from 'react'
+import ContactForm from '../sections/ContactForm'
 
 export default function Integracoes() {
   const ref = useRef<HTMLDivElement>(null)
@@ -23,7 +24,7 @@ export default function Integracoes() {
   return (
     <>
       <main>
-        <div className="relative w-full space-y-5 h-auto flex flex-col items-center lg:items-end bg-gradient-to-b from-synce to-[#F43400] lg:bg-[url('/images/banner-integracoes.png')] bg-no-repeat bg-cover  bg-right lg:bg-top  py-16 px-4 lg:px-14">
+        <div className="relative w-full space-y-5 h-auto flex flex-col items-center lg:items-end bg-gradient-to-b from-synce-primary to-[#F43400] lg:bg-[url('/images/banner-integracoes.png')] bg-no-repeat bg-cover  bg-right lg:bg-top  py-16 px-4 lg:px-14">
           <TitleAnimated
             text='Integração de soluções'
             className='text-white w-full text-center lg:text-left text-[45px] font-medium leading-10 lg:w-[350px]'
@@ -82,7 +83,7 @@ export default function Integracoes() {
           <motion.h3
             whileHover={{ y: -5 }}
             transition={{ duration: 0.1 }}
-            className='text-synce text-center text-[35px] font-bold mb-10'
+            className='text-synce-primary text-center text-[35px] font-bold mb-10'
           >
             Logística
           </motion.h3>
@@ -127,7 +128,7 @@ export default function Integracoes() {
         </div>
       </section>
 
-      <section className='bg-synce flex flex-wrap lg:flex-nowrap overflow-hidden relative'>
+      <section className='bg-synce-primary flex flex-wrap lg:flex-nowrap overflow-hidden relative'>
         <div className='w-full lg:w-5/6 flex px-5 py-10 flex-col z-10 items-center justify-center lg:mr-6 lg:justify-between lg:flex-row '>
           <div className='pl-5 lg:w-9/12 lg:pl-20' ref={ref}>
             {isVisible && (
@@ -167,13 +168,14 @@ export default function Integracoes() {
             className='w-full h-full'
           >
             <Image
-              className='brightness-50 h-full'
+              className='brightness-75 h-full'
               src={LogoSynce}
               alt='Icone Synce'
             />
           </motion.div>
         </div>
       </section>
+      <ContactForm />
     </>
   )
 }

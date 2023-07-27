@@ -34,7 +34,7 @@ export default function Integracoes() {
         </div>
       </main>
       <section className='bg-[#F8F8F8] p-10'>
-        <h3 className='text-synce text-center text-[35px] font-bold mb-10'>
+        <h3 className='text-synce-primary text-center text-[35px] font-bold mb-10'>
           Principal Recursos
         </h3>
         <div className='flex space-x-6'>

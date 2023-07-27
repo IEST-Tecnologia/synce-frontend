@@ -1,3 +1,4 @@
+'use client'
 import { RefObject, useState, useMemo, useEffect } from 'react'
 
 export default function useOnScreen(ref: RefObject<HTMLElement>) {

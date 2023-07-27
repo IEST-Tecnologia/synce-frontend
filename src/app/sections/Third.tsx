@@ -1,44 +1,63 @@
 import Button from '@/components/Button'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Third() {
-  return (
-    <div className='relative flex flex-col'>
-      <div className='absolute bg-synce-primary -z-20 w-full h-full'></div>
-      <div className='absolute flex overflow-hidden h-full -z-10 justify-end ml-auto w-full'>
-        {/* <img src='/logo.svg' alt='image' className='h-full w-auto' /> */}
+import { TypeAnimation } from 'react-type-animation'
+import Link from 'next/link'
+import LogoSynce from '../../../public/images/logo_synce.png'
+import useOnScreen from '@/hooks/useOnScreen'
 
+export default function Third() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isVisible = useOnScreen(ref)
+  return (
+    <section className='bg-synce-primary flex flex-wrap lg:flex-nowrap overflow-hidden relative'>
+      <div className='w-full lg:w-5/6 flex px-5 py-10 flex-col z-10 items-center justify-center lg:mr-6 lg:justify-between lg:flex-row '>
+        <div className='pl-5 lg:w-9/12 lg:pl-20' ref={ref}>
+          {isVisible && (
+            <TypeAnimation
+              className='text-[30px] text-white font-bold h-full text-center mb-5 lg:mb-0 lg:h-24'
+              sequence={[
+                'Não perca essa oportunidade e comece hoje mesmo!',
+                1000,
+              ]}
+              speed={50}
+              repeat={0}
+              wrapper='p'
+            />
+          )}
+        </div>
+        <div className='pl-5 lg:w-3/12 flex justify-end'>
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link
+              className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
+              href='/'
+            >
+              Conheca a Synce
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+      <div className='w-full absolute h-full z-0 lg:w-1/6 right-0'>
         <motion.div
-          initial={{ opacity: 0, rotate: 0 }}
-          whileInView={{ opacity: 1, rotate: 180 }}
-          transition={{ duration: 0.5 }}
+          initial={{ scale: 0, rotate: 0 }}
+          whileInView={{ scale: 1, rotate: 180 }}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+          className='w-full h-full'
         >
-          <img
-            src='/logo.png'
-            alt='image'
-            className='h-full w-auto scale-125 brightness-75'
+          <Image
+            className='brightness-75 h-full'
+            src={LogoSynce}
+            alt='Icone Synce'
           />
         </motion.div>
       </div>
-      <div className='flex h-full'>
-        <div className='lg:w-1/2 p-10 my-auto'>
-          <motion.h1
-            whileHover={{
-              translateY: -10,
-              transition: { duration: 0.5 },
-            }}
-            initial={{ opacity: 0, translateX: '100%' }}
-            whileInView={{ opacity: 1, translateX: '0%' }}
-            transition={{ duration: 0.5 }}
-            className='mb-8 text-2xl font-semibold text-white'
-          >
-            Não perca essa oportunidade e comece hoje mesmo!
-          </motion.h1>
-          <Button>Fale com um especialista</Button>
-        </div>
-      </div>
-    </div>
+    </section>
   )
 }

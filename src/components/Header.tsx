@@ -61,11 +61,11 @@ export default function Header() {
         className='absolute h-full w-full lg:hidden'
       >
         <motion.div
-          className='absolute top-0 right-0 bottom-0 w-full bg-synce-primary z-10 lg:h-0'
+          className='absolute top-0 right-0 bottom-0 w-full bg-synce-primary  z-10 lg:h-0'
           custom={dimensions}
           variants={sidebar}
         />
-        <Navigation />
+        <Navigation toggleOpen={toggleOpen} />
       </motion.nav>
       <div className='flex max-w-4xl mx-auto relative w-full px-10'>
         <Link href='/'>

@@ -24,7 +24,7 @@ const Carroussel = () => {
         <motion.h2
           whileHover={{ y: -5 }}
           transition={{ duration: 0.1 }}
-          className='text-synce text-center text-2xl lg:text-[35px] font-bold mb-10'
+          className='text-synce-primary text-center text-2xl lg:text-[35px] font-bold mb-10'
         >
           Integração com os melhores Marketplaces e ERPs
         </motion.h2>
