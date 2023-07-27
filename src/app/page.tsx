@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className='relative overflow-hidden'>
       <First />
-      <div className='h-28 bg-stone-50'>Carousel</div>
+      <div className='md:h-96 h-28 bg-stone-50'>Carousel</div>
       <Second />
       <FAQ />
       <Third />

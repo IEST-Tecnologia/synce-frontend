@@ -9,23 +9,15 @@ import { HiMegaphone } from 'react-icons/hi2'
 
 export default function Second() {
   return (
-    <div className='relative flex justify-end'>
-      {/* <div className='absolute flex h-full mr-auto w-full'>
+    <div className='relative bg-synce md:bg-transparent md:bg-[url("/second_bg.png")] bg-cover bg-no-repeat h-full'>
+      <div className='absolute h-full hidden md:flex ml-64'>
         <img
-          src='/banner_home_2_vermelho 1.png'
-          alt='logo'
-          className='w-full h-auto'
+          src='/second_woman.png'
+          alt='woman'
+          className='h-full w-auto translate-x-8 '
         />
-      </div> */}
-      {/* <Image
-        className='absolute scale-[1.15] top-2 -z-10 hidden md:block'
-        src='/banner_home_2_vermelho 1.png'
-        alt='banner_2'
-        layout='responsive'
-        width={414}
-        height={220}
-      /> */}
-      <div className=' px-[50px] py-[38px] place-self-end text-white md:w-1/2 space-y-8 bg-synce'>
+      </div>
+      <div className=' ml-auto text-white md:w-1/2  p-16 space-y-8 mb-20'>
         <motion.div
           whileHover={{
             translateY: -10,
@@ -58,7 +50,7 @@ export default function Second() {
         >
           <div className='space-y-4 flex items-center flex-col'>
             <motion.div
-              whileHover={{ rotate: 360 }}
+              whileHover={{ scale: 1.2 }}
               transition={{ duration: 0.5 }}
             >
               <BsPatchQuestionFill className='text-xl' />
@@ -66,15 +58,30 @@ export default function Second() {
             <p className='text-center'>Altere o status de seus produtos</p>
           </div>
           <div className='space-y-4 flex items-center flex-col'>
-            <HiOutlineDocumentReport className='text-xl' />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <HiOutlineDocumentReport className='text-xl' />
+            </motion.div>
             <p className='text-center'>Gere relatórios</p>
           </div>
           <div className='space-y-4 flex items-center flex-col'>
-            <HiMegaphone className='text-xl' />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <HiMegaphone className='text-xl' />
+            </motion.div>
             <p className='text-center'>Crie anúncios</p>
           </div>
           <div className='space-y-4 flex items-center flex-col'>
-            <BsThreeDots className='text-xl' />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <BsThreeDots className='text-xl' />
+            </motion.div>
             <p className='text-center'>E muito mais!</p>
           </div>
         </motion.div>
