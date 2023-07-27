@@ -13,7 +13,11 @@ module.exports = {
       },
       colors: {
         synce: {
-          DEFAULT: '#EB0B00',
+          primary: {
+            DEFAULT: '#EB0B00',
+            dark: '#d10c02',
+            light: '#f54a42',
+          },
           secondary: {
             DEFAULT: '#5B00A2',
             dark: '#490082',
