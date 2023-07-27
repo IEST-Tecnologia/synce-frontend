@@ -23,7 +23,7 @@ export default function Third() {
         </motion.div>
       </div>
       <div className='flex h-full'>
-        <div className='md:w-1/2 p-10 my-auto'>
+        <div className='lg:w-1/2 p-10 my-auto'>
           <motion.h1
             whileHover={{
               translateY: -10,

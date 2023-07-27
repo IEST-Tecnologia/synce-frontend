@@ -6,9 +6,11 @@ import Link from 'next/link'
 
 const ulVariants = {
   open: {
+    zIndex: [40],
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
+    zIndex: [40, -10],
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 }
@@ -49,18 +51,21 @@ export const Navigation = () => {
   return (
     <motion.ul
       variants={ulVariants}
-      className='p-6 absolute top-20 bg-transparent z-20 w-full flex flex-col'
+      className='p-6 absolute top-20 bg-transparent z-40 w-full flex flex-col lg:hidden'
     >
       {navLinks.map((link) => (
         <motion.li
           variants={liVariants}
           whileTap={{ scale: 0.95 }}
-          className={`z-20  text-white text-right hover:bg-synce-primary-light rounded-lg ${
+          className={` text-white  hover:bg-synce-primary-light rounded-lg ${
             pathname?.startsWith(link.href) ? 'bg-sync-primary-light' : ''
           }`}
           key={link.name}
         >
-          <Link className='w-full h-full block p-4' href={link.href}>
+          <Link
+            className='w-full h-full block p-4 text-center text-2xl font-bold'
+            href={link.href}
+          >
             {link.name}
           </Link>
         </motion.li>

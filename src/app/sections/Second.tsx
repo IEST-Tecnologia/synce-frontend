@@ -1,27 +1,31 @@
 import Button from '@/components/Button'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 import { BsPatchQuestionFill, BsThreeDots } from 'react-icons/bs'
 import { HiOutlineDocumentReport } from 'react-icons/hi'
 import { HiMegaphone } from 'react-icons/hi2'
+import useOnScreen from '@/hooks/useOnScreen'
 
 export default function Second() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isVisible = useOnScreen(ref)
+
   return (
-    <div className='relative bg-synce-primary md:bg-transparent md:bg-[url("/second_bg.png")] md:bg-cover md:bg-no-repeat md:h-full'>
-      <div className='absolute h-full hidden md:flex ml-64'>
+    <div className='relative bg-synce-primary lg:bg-transparent lg:bg-[url("/second_bg.png")] lg:bg-cover lg:bg-no-repeat lg:h-full'>
+      <div className='absolute h-full hidden lg:flex ml-64'>
         <img
           src='/second_woman.png'
           alt='woman'
           className='h-full w-auto translate-x-8 '
         />
       </div>
-      <div className=' ml-auto text-white md:w-1/2  p-16 space-y-8 '>
+      <div className=' ml-auto text-white lg:w-1/2  p-16 space-y-8 '>
         <motion.div
           whileHover={{
             translateY: -10,
-            transition: { duration: 0.5 },
+            transition: { duration: 0.2 },
           }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -32,15 +36,17 @@ export default function Second() {
             para o seu <strong>dia a dia</strong>!
           </h2>
         </motion.div>
-        <p className='mb-8'>
-          <TypeAnimation
-            sequence={[
-              'Com o nosso hub, você terá várias funcionalidades à sua disposição:',
-            ]}
-            wrapper='span'
-            speed={50}
-            repeat={0}
-          />
+        <p className='mb-8' ref={ref}>
+          {isVisible && (
+            <TypeAnimation
+              sequence={[
+                'Com o nosso hub, você terá várias funcionalidades à sua disposição:',
+              ]}
+              wrapper='span'
+              speed={50}
+              repeat={0}
+            />
+          )}
         </p>
         <motion.div
           initial={{ opacity: 0 }}

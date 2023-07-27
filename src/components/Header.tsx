@@ -6,9 +6,8 @@ import Link from 'next/link'
 
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { useRef } from 'react'
-import { motion, sync, useCycle } from 'framer-motion'
+import { motion, useCycle } from 'framer-motion'
 import { useDimensions } from '../hooks/use-dimensions'
-import { MenuToggle } from './MenuToggle'
 import { Navigation } from './Navigation'
 
 const sidebar = {
@@ -20,18 +19,9 @@ const sidebar = {
       restDelta: 2,
     },
   }),
-  // closed: ({ height, width }: { height: number; width: number }) => ({
-  //   clipPath: `circle(20px at ${width - 50}px 20px)`,
-  //   transition: {
-  //     delay: 0.5,
-  //     type: 'spring',
-  //     stiffness: 400,
-  //     damping: 40,
-  //   },
-  // }),
   closed: ({ height, width }: { height: number; width: number }) => {
     return {
-      clipPath: `circle(20px at ${width - 50}px 20px)`,
+      clipPath: `circle(20px at ${width}px 20px)`,
       transition: {
         delay: 0.5,
         type: 'spring',
@@ -62,16 +52,16 @@ export default function Header() {
   const containerRef = useRef(null)
   const dimensions = useDimensions(containerRef)
   return (
-    <header className=' bg-synce-primary'>
+    <header className=' bg-synce-primary z-20'>
       <motion.nav
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
         custom={dimensions}
         ref={containerRef}
-        className='absolute h-full w-full md:hidden'
+        className='absolute h-full w-full lg:hidden'
       >
         <motion.div
-          className='absolute top-0 right-0 bottom-0 w-full bg-synce-primary z-10'
+          className='absolute top-0 right-0 bottom-0 w-full bg-synce-primary z-10 lg:h-0'
           custom={dimensions}
           variants={sidebar}
         />
@@ -81,7 +71,7 @@ export default function Header() {
         <Link href='/'>
           <img src='/logo_full_white.png' alt='logo' className='h-16 py-3' />
         </Link>
-        <div className='items-center text-white ml-10 md:flex hidden'>
+        <div className='items-center text-white ml-10 lg:flex hidden'>
           {navLinks.map((link) => {
             const isActive = pathname?.startsWith(link.href)
             return (
@@ -103,7 +93,7 @@ export default function Header() {
             Login
           </button>
         </div>
-        <div className='md:hidden px-2 py-auto flex items-center text-2xl font-bold text-white z-20'>
+        <div className='lg:hidden px-2 py-auto flex items-center text-2xl font-bold text-white z-20'>
           <RxHamburgerMenu onClick={() => toggleOpen()} />
         </div>
       </div>
