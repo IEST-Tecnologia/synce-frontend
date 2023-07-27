@@ -1,4 +1,3 @@
-'use client'
 import React, { ReactComponentElement } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
@@ -12,13 +11,14 @@ const TitleAnimated = ({ text, className }: Props) => {
   return (
     <>
       {text && (
-        <TypeAnimation
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
           className={className}
-          sequence={[text]}
-          wrapper='h1'
-          speed={10}
-          repeat={0}
-        />
+        >
+          {text}
+        </motion.h1>
       )}
     </>
   )
