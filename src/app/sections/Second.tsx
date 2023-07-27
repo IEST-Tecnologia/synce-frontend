@@ -9,7 +9,7 @@ import { HiMegaphone } from 'react-icons/hi2'
 
 export default function Second() {
   return (
-    <div className='relative bg-synce md:bg-transparent md:bg-[url("/second_bg.png")] bg-cover bg-no-repeat h-full'>
+    <div className='relative bg-synce-primary md:bg-transparent md:bg-[url("/second_bg.png")] md:bg-cover md:bg-no-repeat md:h-full'>
       <div className='absolute h-full hidden md:flex ml-64'>
         <img
           src='/second_woman.png'
@@ -17,7 +17,7 @@ export default function Second() {
           className='h-full w-auto translate-x-8 '
         />
       </div>
-      <div className=' ml-auto text-white md:w-1/2  p-16 space-y-8 mb-20'>
+      <div className=' ml-auto text-white md:w-1/2  p-16 space-y-8 '>
         <motion.div
           whileHover={{
             translateY: -10,

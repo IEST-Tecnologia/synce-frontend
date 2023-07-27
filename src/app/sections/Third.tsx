@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function Third() {
   return (
     <div className='relative flex flex-col'>
-      <div className='absolute bg-synce -z-20 w-full h-full'></div>
+      <div className='absolute bg-synce-primary -z-20 w-full h-full'></div>
       <div className='absolute flex overflow-hidden h-full -z-10 justify-end ml-auto w-full'>
         {/* <img src='/logo.svg' alt='image' className='h-full w-auto' /> */}
 

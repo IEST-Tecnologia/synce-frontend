@@ -54,7 +54,7 @@ export default function FAQ() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className='border-b-4 border-synce text-center text-synce text-xl font-bold mx-auto px-4'
+            className='border-b-4 border-synce-primary text-center text-synce-primary text-xl font-bold mx-auto px-4'
           >
             FAQ
           </motion.p>
