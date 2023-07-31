@@ -16,6 +16,25 @@ import { TypeAnimation } from 'react-type-animation'
 import useOnScreen from '@/hooks/useOnScreen'
 import { useRef } from 'react'
 import ContactForm from '../sections/ContactForm'
+import TitleSectionAnimated from '@/components/TitleSectionAnimated'
+
+const blocksInfosWithImage = [
+  {
+    image: BannerLogistica,
+    title: 'Lorem ipsum dolor sit amet',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing',
+  },
+  {
+    image: BannerLogistica,
+    title: 'Lorem ipsum dolor sit amet',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing',
+  },
+  {
+    image: BannerLogistica,
+    title: 'Lorem ipsum dolor sit amet',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing',
+  },
+]
 
 export default function Integracoes() {
   const ref = useRef<HTMLDivElement>(null)
@@ -29,7 +48,7 @@ export default function Integracoes() {
             text='Integração de soluções'
             className='text-white w-full text-center lg:text-left text-[45px] font-medium leading-10 lg:w-[350px]'
           />
-          <ListAnimated />
+          <ListAnimated className='ml-4 list-disc text-white' />
           <ButtonAnimated
             className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
             link='#'
@@ -74,57 +93,26 @@ export default function Integracoes() {
         </div>
       </section>
       <section className='bg-[#F8F8F8] p-5 lg:p-10'>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.h3
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.1 }}
-            className='text-synce-primary text-center text-[35px] font-bold mb-10'
-          >
-            Logística
-          </motion.h3>
-        </motion.div>
-        <div className='flex space-x-0 justify-center items-center space-y-6 lg:space-y-0 lg:space-x-6 flex-col lg:flex-row'>
-          <motion.div
-            initial={{ y: 200, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className='w-full lg:w-[47%]'
-          >
-            <BlockImageContent
-              img={BannerLogistica}
-              title='Lorem ipsum dolor sit amet'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing'
-            />
-          </motion.div>
-          <motion.div
-            initial={{ y: 200, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className='w-full lg:w-[47%]'
-          >
-            <BlockImageContent
-              img={BannerLogistica}
-              title='Lorem ipsum dolor sit amet'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing'
-            />
-          </motion.div>
-          <motion.div
-            initial={{ y: 200, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className='w-full lg:w-[47%]'
-          >
-            <BlockImageContent
-              img={BannerLogistica}
-              title='Lorem ipsum dolor sit amet'
-              text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing'
-            />
-          </motion.div>
+        <TitleSectionAnimated text='Logística' />
+        <div className='grid grid-cols-1 gap-4 lg:grid-cols-3'>
+          {blocksInfosWithImage.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 200, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: index === 0 ? 0.5 : index === 1 ? 0.3 : 0,
+                duration: 0.5,
+              }}
+              className='w-full'
+            >
+              <BlockImageContent
+                img={item.image}
+                title={item.title}
+                text={item.text}
+              />
+            </motion.div>
+          ))}
         </div>
       </section>
 
