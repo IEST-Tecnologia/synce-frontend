@@ -1,5 +1,4 @@
 'use client'
-
 import First from './sections/First'
 import Second from './sections/Second'
 import FAQ from './sections/FAQ'

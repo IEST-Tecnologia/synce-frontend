@@ -1,7 +1,8 @@
 'use client'
 import Image from 'next/image'
-import LogoSynce from '../../../public/images/logo_synce_simbolo.png'
+import LogoSynce from '../../../public/images/logo_synce.png'
 import BannerLogistica from '../../../public/images/banner-logistica.png'
+import Girl from '../../../public/images/girl.png'
 import BlockImageContent from '@/pages/blockImageContent'
 import ListAnimated from '@/components/ListAnimated'
 import { motion } from 'framer-motion'
@@ -46,27 +47,33 @@ export default function Integracoes() {
   return (
     <>
       <main>
-        <div className='flex items-center'>
-          <div className=''>
-            <Image src={LogoSynce} alt='Logo synce' />
-          </div>
-          <div className='flex flex-col'>
+        <div className='flex items-center relative overflow-hidden'>
+          <motion.div
+            initial={{ scale: 0, rotate: 0 }}
+            whileInView={{ scale: 1, rotate: 180 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+            className='w-auto absolute h-full'
+          >
+            <Image
+              className='opacity-10 h-full'
+              src={LogoSynce}
+              alt='Logo synce'
+            />
+          </motion.div>
+          <div className='flex flex-col py-10 ml-72'>
             <TitleAnimated
               text='Funcionalidades Synce'
-              className='text-[#666] font-normal text-5xl w-10'
+              className='text-[#666] font-normal text-5xl w-10 mb-6'
             />
-            <ListAnimated className='ml-4 list-disc text-black' />
+            <ListAnimated className='ml-4 list-disc text-[#666] mb-8' />
             <div className='flex justify-center'>
-              <ButtonAnimated
-                className='mt-8 rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
-                link='#'
-                text='Conheça a Synce'
-              />
+              <ButtonAnimated link='#' text='Conheça a Synce' />
             </div>
           </div>
         </div>
       </main>
-      <section className='bg-[#F8F8F8] p-10'>
+      <section className='bg-[#F8F8F8] px-10 pt-10 pb-20'>
         <TitleSectionAnimated text='Principais Recursos' />
         <div className='grid grid-cols-1 gap-4 lg:grid-cols-3'>
           {blocksInfosWithImage.map((item, index) => (
@@ -100,6 +107,39 @@ export default function Integracoes() {
               />
             </motion.div>
           ))}
+        </div>
+      </section>
+      <section className='bg-synce-primary flex'>
+        <div className='w-3/6 relative'>
+          <motion.div
+            initial={{ scale: 0, rotate: 0 }}
+            whileInView={{ scale: 1, rotate: 180 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+            className='w-auto absolute h-full left-10'
+          >
+            <Image className='brightness-75 h-full' src={LogoSynce} alt='' />
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className='w-full h-full absolute'
+          >
+            <Image
+              className='absolute h-[120%] top-[-65px] left-40 z-10'
+              src={Girl}
+              alt=''
+            />
+          </motion.div>
+        </div>
+        <div className='w-3/6 my-12'>
+          <TitleAnimated
+            text='Aproveite agora mesmo!'
+            className='text-white text-4xl font-bold w-[300px] mb-6'
+          />
+          <ListAnimated className='ml-4 list-disc text-white mb-8' />
+          <ButtonAnimated link='#' text='Saiba mais' />
         </div>
       </section>
     </>
