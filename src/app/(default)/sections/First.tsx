@@ -1,8 +1,8 @@
 'use client'
 import Button from '@/components/Button'
 import React from 'react'
-import Logo from '../../../public/images/logo.svg'
-import Banner1 from '../../../public/images/banner_1.png'
+import Logo from '../../../../public/images/logo.svg'
+import Banner1 from '../../../../public/images/banner_1.png'
 import Image from 'next/image'
 
 export default function First() {

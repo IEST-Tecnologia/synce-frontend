@@ -15,6 +15,8 @@ export default function AuthForm({ session }: { session: Session | null }) {
   const router = useRouter()
   const supabase = createClientComponentClient()
 
+  console.log(session)
+
   const handleSignIn = async () => {
     await supabase.auth
       .signInWithPassword({
