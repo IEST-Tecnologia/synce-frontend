@@ -1,34 +1,41 @@
-'use client'
 import { motion } from 'framer-motion'
 
-const ListAnimated = () => {
+interface Props {
+  className: string
+}
+
+const ListAnimated = ({ className }: Props) => {
   return (
     <motion.ul
       initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className='ml-4 list-disc text-white'
+      className={className}
     >
       <motion.li
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        className='mb-2'
       >
-        Lorem ipsum dolor sit amet, consectetur.
+        Venda mais ao unificar marketplaces, gerenciar anúncios e soluções
+        logísticas no Synce.
       </motion.li>
       <motion.li
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
+        className='mb-2'
       >
-        Lorem ipsum dolor sit amet, consectetur.
+        Integre ERPs e plataformas de frete para uma experiência completa.
       </motion.li>
       <motion.li
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
+        className='mb-2'
       >
-        Lorem ipsum dolor sit amet, consectetur.
+        Unifique seus canais de venda com as principais plataformas do mercado!
       </motion.li>
     </motion.ul>
   )

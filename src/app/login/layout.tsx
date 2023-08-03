@@ -1,17 +1,14 @@
-import { Metadata } from 'next'
-import '../globals.css'
+import '../../globals.css'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s - Hub Synce',
-    default: 'Hub Synce',
-  },
+  title: 'Synce HUB - Login',
 }
 
-export default function RootLayout({
+export default function LoginLayout({
   children,
 }: {
   children: React.ReactNode

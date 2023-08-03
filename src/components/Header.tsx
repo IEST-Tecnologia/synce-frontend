@@ -69,7 +69,11 @@ export default function Header() {
       </motion.nav>
       <div className='flex max-w-4xl mx-auto relative w-full px-10'>
         <Link href='/'>
-          <img src='/logo_full_white.png' alt='logo' className='h-16 py-3' />
+          <img
+            src='/images/logo_full_white.png'
+            alt='logo'
+            className='h-16 py-3'
+          />
         </Link>
         <div className='items-center text-white ml-10 lg:flex hidden'>
           {navLinks.map((link) => {

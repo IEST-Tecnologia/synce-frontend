@@ -1,14 +1,14 @@
-import Button from '@/components/Button'
-import Image from 'next/image'
-import React, { useRef } from 'react'
-import { motion } from 'framer-motion'
-
+'use client'
+import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
-import Link from 'next/link'
-import LogoSynce from '../../../public/images/logo_synce.png'
+import LogoSynce from '../../public/images/logo_synce.png'
 import useOnScreen from '@/hooks/useOnScreen'
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import Image from 'next/image'
 
-export default function Third() {
+const Opportunity = () => {
   const ref = useRef<HTMLDivElement>(null)
   const isVisible = useOnScreen(ref)
   return (
@@ -17,7 +17,7 @@ export default function Third() {
         <div className='pl-5 lg:w-9/12 lg:pl-20' ref={ref}>
           {isVisible && (
             <TypeAnimation
-              className='text-[30px] text-white font-bold h-full text-center mb-5 lg:mb-0 lg:h-24'
+              className='text-[30px] text-white font-bold h-full text-center lg:text-left mb-5 lg:mb-0 lg:h-24'
               sequence={[
                 'Não perca essa oportunidade e comece hoje mesmo!',
                 1000,
@@ -38,7 +38,7 @@ export default function Third() {
               className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
               href='/'
             >
-              Conheca a Synce
+              FALE CONOSCO
             </Link>
           </motion.div>
         </div>
@@ -52,7 +52,7 @@ export default function Third() {
           className='w-full h-full'
         >
           <Image
-            className='brightness-75 h-full'
+            className='brightness-50 h-full opacity-30'
             src={LogoSynce}
             alt='Icone Synce'
           />
@@ -61,3 +61,5 @@ export default function Third() {
     </section>
   )
 }
+
+export default Opportunity
