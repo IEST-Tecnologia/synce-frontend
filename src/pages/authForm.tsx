@@ -57,9 +57,6 @@ export default function AuthForm({ session }: { session: Session | null }) {
         className='mb-8'
       />
       <Button onClick={handleSignIn}>Continuar</Button>
-      <Link className='text-center text-white underline mt-2' href='#'>
-        Esqueceu a senha?
-      </Link>
     </>
   )
 }

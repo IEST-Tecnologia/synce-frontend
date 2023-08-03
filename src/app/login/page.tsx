@@ -5,7 +5,7 @@ import AuthForm from '@/pages/authForm'
 import LogoSynce from '../../../public/images/logo_synce_color.png'
 import BgSynce from '../../../public/images/bg-synce-logo.png'
 import Image from 'next/image'
-import Button from '@/components/Button'
+import Link from 'next/link'
 
 export default async function Login() {
   const supabase = createServerComponentClient({ cookies })
@@ -28,7 +28,12 @@ export default async function Login() {
         </h2>
         <div className='flex flex-col w-full'>
           <AuthForm session={session} />
-          <Button>Continuar</Button>
+          <Link
+            className='text-center text-white underline mt-2'
+            href='/login/forgot'
+          >
+            Esqueceu a senha?
+          </Link>
         </div>
       </div>
     </div>

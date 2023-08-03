@@ -1,4 +1,4 @@
-import Button from '@/components/Button'
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
@@ -96,7 +96,7 @@ export default function FAQ() {
                 leaveFrom='transform translate-y-0 opacity-100'
                 leaveTo='transform -translate-y-full opacity-0'
               >
-                <div className='overflow-hidden rounded-xl'>
+                <div className='overflow-hidden'>
                   <Disclosure.Panel
                     className={
                       'text-gray-400 px-4 py-3 text-sm  w-full bg-gray-50 border-gray-300 overflow-hidden ' +
