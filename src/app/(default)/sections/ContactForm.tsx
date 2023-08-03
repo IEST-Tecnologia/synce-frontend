@@ -1,5 +1,4 @@
 'use client'
-
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 import Image from 'next/image'

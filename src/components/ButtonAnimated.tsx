@@ -4,20 +4,21 @@ import { motion } from 'framer-motion'
 
 interface Props {
   link: string
-  className: string
+  className?: string
   text: string
 }
 
 const ButtonAnimated = ({ link, className, text }: Props) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      initial={{ scale: 0, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className='flex justify-center md:justify-start'
     >
-      <Link href={link} className={className}>
+      <Link
+        href={link}
+        className={`rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark ${className}`}
+      >
         {text}
       </Link>
     </motion.div>
