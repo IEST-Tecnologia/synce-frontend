@@ -1,18 +1,21 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import React from 'react'
-import { cookies } from 'next/headers'
+import React, { useEffect } from 'react'
+import { redirect } from 'next/navigation'
 import AuthForm from '@/pages/authForm'
 import LogoSynce from '../../../public/images/logo_synce_color.png'
 import BgSynce from '../../../public/images/bg-synce-logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import GetSession from '../services/helpers'
 
 export default async function Login() {
-  const supabase = createServerComponentClient({ cookies })
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  try {
+    const result = await GetSession()
+    if (result) {
+      redirect('/dashboard')
+    }
+  } catch (error) {
+    console.log(error)
+  }
 
   return (
     <div className='bg-synce-primary flex justify-center items-center relative h-[100vh] overflow-hidden'>
@@ -27,7 +30,7 @@ export default async function Login() {
           Preparado para gerenciar seus marketplaces da melhor maneira?
         </h2>
         <div className='flex flex-col w-full'>
-          <AuthForm session={session} />
+          <AuthForm />
           <Link
             className='text-center text-white underline mt-2'
             href='/login/forgot'
