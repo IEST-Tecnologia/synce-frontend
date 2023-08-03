@@ -39,7 +39,7 @@ export default function Third() {
               className='rounded-lg py-3 px-5 text-white bg-synce-secondary hover:bg-synce-secondary-dark'
               href='/'
             >
-              Conheca a Synce
+              Conheça a Synce
             </Link>
           </motion.div>
         </div>

@@ -9,6 +9,8 @@ import { useRef } from 'react'
 import { motion, useCycle } from 'framer-motion'
 import { useDimensions } from '../hooks/use-dimensions'
 import { Navigation } from './Navigation'
+import Logo from '../../public/images/logo_full_white.png'
+import Image from 'next/image'
 
 const sidebar = {
   open: ({ height, width }: { height: number; width: number }) => ({
@@ -69,13 +71,9 @@ export default function Header() {
       </motion.nav>
       <div className='flex max-w-4xl mx-auto relative w-full px-10'>
         <Link href='/'>
-          <img
-            src='/images/logo_full_white.png'
-            alt='logo'
-            className='h-16 py-3'
-          />
+          <Image src={Logo} alt='logo' className='h-16 w-auto py-3' />
         </Link>
-        <div className='items-center text-white ml-10 lg:flex hidden'>
+        <ul className='items-center text-white ml-10 lg:flex hidden'>
           {navLinks.map((link) => {
             const isActive = pathname?.startsWith(link.href)
             return (
@@ -86,12 +84,13 @@ export default function Header() {
                 }
                 href={link.href}
                 key={link.name}
+                as='li'
               >
                 {link.name}
               </Link>
             )
           })}
-        </div>
+        </ul>
         <div className='ml-auto flex items-center text-white mr-4'>
           <button className='border-white border-2 font-semibold rounded-xl text-sm py-2 px-3 hover:bg-synce-primary-dark transition ease-in-out duration-200'>
             Login
