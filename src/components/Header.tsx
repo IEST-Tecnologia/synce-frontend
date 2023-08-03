@@ -84,7 +84,6 @@ export default function Header() {
                 }
                 href={link.href}
                 key={link.name}
-                as='li'
               >
                 {link.name}
               </Link>
