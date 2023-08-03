@@ -6,10 +6,6 @@ import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Synce HUB',
-}
-
 export default function RootLayout({
   children,
 }: {

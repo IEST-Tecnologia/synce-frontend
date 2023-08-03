@@ -1,3 +1,4 @@
+'use client'
 import Button from '@/components/Button'
 import Image from 'next/image'
 import React from 'react'
@@ -14,7 +15,7 @@ export default function FAQ() {
     {
       title: 'EM QUE ESSA FERRAMENTA PODERIA ME AJUDAR?',
       content:
-        'Além de ter todos os dados concentrados em um único lugar, você poderá fazer a gestão de múltiplas lojas e locais.Graças a uma comunicação centralizada, a SYNCE permite que você controle diferentes e-commerces e marketplaces.',
+        'Além de ter todos os dados concentrados em um único lugar, você poderá fazer a gestão de múltiplas lojas e locais. Graças a uma comunicação centralizada, a SYNCE permite que você controle diferentes e-commerces e marketplaces.',
     },
     {
       title: 'COMO EU FACO PARA EMITIR NFS SE TENHO MAIS DE UMA?',
@@ -43,40 +44,42 @@ export default function FAQ() {
     },
   ]
   return (
-    <div className='relative'>
-      <div className=' p-10 flex flex-col container mx-auto'>
-        <div className='flex'>
+    <section className='relative'>
+      <div className=' p-10 flex flex-col container mx-auto lg:flex-row w-full'>
+        <div className='flex flex-col items-center lg:w-1/2 lg:items-start'>
+          <div className='flex'>
+            <motion.h2
+              whileHover={{
+                translateY: -10,
+                transition: { duration: 0.5 },
+              }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className='border-b-4 border-synce-primary  text-center text-synce-primary  text-xl font-bold mx-auto px-4'
+            >
+              FAQ
+            </motion.h2>
+          </div>
           <motion.p
-            whileHover={{
-              translateY: -10,
-              transition: { duration: 0.5 },
-            }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className='border-b-4 border-synce-primary  text-center text-synce-primary  text-xl font-bold mx-auto px-4'
+            transition={{ duration: 1 }}
+            className='my-6 font-semibold text-center'
           >
-            FAQ
+            Confira as principais dúvidas...
           </motion.p>
         </div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className='my-6 font-semibold text-center'
-        >
-          Confira as principais dúvidas...
-        </motion.p>
         <motion.ul
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className='flex flex-col border-2 border-gray-300 rounded-xl items-start'
+          className='flex flex-col border-2 border-gray-300 rounded-xl items-start lg:w-1/2'
         >
           {faq.map((c, index) => (
             <Disclosure key={index}>
               <Disclosure.Button className='justify-between items-center w-full flex px-4 py-7 border-b-2 border-gray-300 last:border-0 space-x-4 hover:text-synce-secondary'>
-                <p className='text-left font-semibold'>{c.title}</p>
+                <h4 className='text-left font-semibold'>{c.title}</h4>
 
                 <motion.div
                   whileHover={{
@@ -85,7 +88,7 @@ export default function FAQ() {
                   }}
                   className='w-5 h-5 relative flex-shrink-0'
                 >
-                  <Image src='/plus.svg' alt='plus' fill />
+                  <Image src='/images/plus.svg' alt='plus' fill />
                 </motion.div>
               </Disclosure.Button>
               <Transition
@@ -96,7 +99,7 @@ export default function FAQ() {
                 leaveFrom='transform translate-y-0 opacity-100'
                 leaveTo='transform -translate-y-full opacity-0'
               >
-                <div className='overflow-hidden rounded-xl'>
+                <p className='overflow-hidden rounded-xl'>
                   <Disclosure.Panel
                     className={
                       'text-gray-400 px-4 py-3 text-sm  w-full bg-gray-50 border-gray-300 overflow-hidden ' +
@@ -105,12 +108,12 @@ export default function FAQ() {
                   >
                     {c.content}
                   </Disclosure.Panel>
-                </div>
+                </p>
               </Transition>
             </Disclosure>
           ))}
         </motion.ul>
       </div>
-    </div>
+    </section>
   )
 }
