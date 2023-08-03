@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
-import LogoSynce from '../../public/images/logo_synce.png'
+import LogoSynce from '@/assets/logo_synce.png'
 import useOnScreen from '@/hooks/useOnScreen'
 import { useRef } from 'react'
 import { motion } from 'framer-motion'

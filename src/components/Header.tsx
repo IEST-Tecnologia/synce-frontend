@@ -9,7 +9,7 @@ import { useRef } from 'react'
 import { motion, useCycle } from 'framer-motion'
 import { useDimensions } from '../hooks/use-dimensions'
 import { Navigation } from './Navigation'
-import Logo from '../../public/images/logo_full_white.png'
+import Logo from '@/assets/logo_full_white.png'
 import Image from 'next/image'
 
 const sidebar = {
@@ -84,7 +84,6 @@ export default function Header() {
                 }
                 href={link.href}
                 key={link.name}
-                as='li'
               >
                 {link.name}
               </Link>

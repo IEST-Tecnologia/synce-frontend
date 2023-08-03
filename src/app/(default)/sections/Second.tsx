@@ -8,7 +8,7 @@ import { BsPatchQuestionFill, BsThreeDots } from 'react-icons/bs'
 import { HiOutlineDocumentReport } from 'react-icons/hi'
 import { HiMegaphone } from 'react-icons/hi2'
 import useOnScreen from '@/hooks/useOnScreen'
-import Banner2 from '../../../public/images/second_woman.png'
+import Banner2 from '@/assets/second_woman.png'
 
 export default function Second() {
   const ref = useRef<HTMLDivElement>(null)

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import LogoSynce from '../../../../../public/images/logo_synce.png'
+import LogoSynce from '@/assets/logo_synce.png'
 import Image from 'next/image'
 import ButtonAnimated from '@/components/ButtonAnimated'
 import TitleAnimated from '@/components/TitleAnimated'

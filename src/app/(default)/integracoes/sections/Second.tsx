@@ -2,7 +2,7 @@
 import React from 'react'
 import ImageAnimated from '@/components/ImageAnimated'
 import BlockContent from '@/pages/blockContent'
-import ImagemConteudoIntegracoes from '../../../../../public/images/banner_integraçoes-v2.png'
+import ImagemConteudoIntegracoes from '@/assets/banner_integraçoes-v2.png'
 
 const Second = () => {
   return (

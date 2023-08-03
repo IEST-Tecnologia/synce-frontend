@@ -1,6 +1,6 @@
 import React from 'react'
-import LogoSynce from '../../../../public/images/logo_synce_color.png'
-import BgSynce from '../../../../public/images/bg-synce-logo.png'
+import LogoSynce from '@/assets/logo_synce_color.png'
+import BgSynce from '@/assets/bg-synce-logo.png'
 import Image from 'next/image'
 import ForgotPasswordForm from '@/pages/forgotPasswordForm'
 

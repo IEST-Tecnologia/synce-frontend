@@ -2,10 +2,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import LogoSynce from '../../../../../public/images/logo_synce.png'
+import LogoSynce from '@/assets/logo_synce.png'
 import ButtonAnimated from '@/components/ButtonAnimated'
 import TitleAnimated from '@/components/TitleAnimated'
-import Girl from '../../../../../public/images/girl.png'
+import Girl from '@/assets/girl.png'
 
 const Third = () => {
   return (

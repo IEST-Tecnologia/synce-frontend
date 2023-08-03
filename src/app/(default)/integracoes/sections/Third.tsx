@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import TitleSectionAnimated from '@/components/TitleSectionAnimated'
-import BannerLogistica from '../../../../../public/images/banner-logistica.png'
+import BannerLogistica from '@/assets/banner-logistica.png'
 import BlockImageContent from '@/pages/blockImageContent'
 
 const blocksInfosWithImage = [

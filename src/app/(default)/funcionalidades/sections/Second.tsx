@@ -1,7 +1,7 @@
 'use client'
 import TitleSectionAnimated from '@/components/TitleSectionAnimated'
 import BlockImageContent from '@/pages/blockImageContent'
-import BannerLogistica from '../../../../../public/images/banner-logistica.png'
+import BannerLogistica from '@/assets/banner-logistica.png'
 import { motion } from 'framer-motion'
 import React from 'react'
 

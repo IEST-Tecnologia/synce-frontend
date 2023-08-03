@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 import { TypeAnimation } from 'react-type-animation'
 import Link from 'next/link'
-import LogoSynce from '../../../../public/images/logo_synce.png'
+import LogoSynce from '@/assets/logo_synce.png'
 import useOnScreen from '@/hooks/useOnScreen'
 
 export default function Third() {
