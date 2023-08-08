@@ -1,5 +1,5 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import React from 'react'
+import React, { cache } from 'react'
 import { cookies } from 'next/headers'
 import AuthForm from '@/pages/authForm'
 import LogoSynce from '../../../public/images/logo_synce_color.png'
@@ -8,7 +8,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Login() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = cache(() => {
+    const cookieStore = cookies()
+    return createServerComponentClient({ cookies: () => cookieStore })
+  })()
 
   const {
     data: { session },
