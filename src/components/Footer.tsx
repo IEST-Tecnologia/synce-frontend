@@ -6,17 +6,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
-  const [windowWidth, setWindowWidth] = useState(window?.innerWidth ?? 0)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window?.innerWidth)
+      setWindowWidth(window.innerWidth)
     }
+    if (typeof window !== 'undefined') {
+      handleResize()
+      window?.addEventListener('resize', handleResize)
 
-    window?.addEventListener('resize', handleResize)
-
-    return () => {
-      window?.removeEventListener('resize', handleResize)
+      return () => {
+        window?.removeEventListener('resize', handleResize)
+      }
     }
   }, [])
 
