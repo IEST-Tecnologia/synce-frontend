@@ -7,13 +7,11 @@ import BgSynce from '../../../public/images/bg-synce-logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const createServerSupabaseClient = cache(() => {
-  const cookieStore = cookies()
-  return createServerComponentClient({ cookies: () => cookieStore })
-})
-
 export default async function Login() {
-  const supabase = createServerSupabaseClient()
+  const supabase = cache(() => {
+    const cookieStore = cookies()
+    return createServerComponentClient({ cookies: () => cookieStore })
+  })()
 
   const {
     data: { session },
